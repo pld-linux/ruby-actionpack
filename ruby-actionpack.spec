@@ -11,7 +11,7 @@ License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubyforge.org/download.php/1119/%{tarname}-%{version}.tgz
 # Source0-md5:	3ad136fc8370de1ce62c0b90d15c0f58
-URL:		http://ap.rubyonrails.org/
+URL:		http://actionpack.rubyonrails.org/
 BuildRequires:	ruby
 Requires:	ruby
 BuildArch:	noarch
