@@ -9,8 +9,8 @@ Version:	0.8.0
 Release:	0.1
 License:	Ruby-alike
 Group:		Development/Languages
-Source0:	http://rubyforge.org/download.php/1119/%{tarname}-%{version}.tgz
-# Source0-md5:	3ad136fc8370de1ce62c0b90d15c0f58
+Source0:	http://rubyforge.org/download.php/1219/%{tarname}-%{version}.tgz
+# Source0-md5:	1cd409bf0c0e16f44db979bdac4264e0
 URL:		http://actionpack.rubyonrails.org/
 BuildRequires:	ruby
 Requires:	ruby
@@ -25,7 +25,7 @@ delete (CRUD for short) some sort of model part (often database) before
 choosing either to render a template or redirecting to another action.
 
 %prep
-%setup -q -n %{tarname}-0.7.9
+%setup -q -n %{tarname}-%{version}
 
 %build
 rdoc --ri --op ri lib
