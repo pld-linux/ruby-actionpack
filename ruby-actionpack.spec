@@ -36,6 +36,9 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/ri/* $RPM_BUILD_ROOT%{ruby_ridir}
+rm $RPM_BUILD_ROOT%{ruby_ridir}/CGI/*
+rm $RPM_BUILD_ROOT%{ruby_ridir}/Class/*
+rm $RPM_BUILD_ROOT%{ruby_ridir}/Logger/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -44,14 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README rdoc
 %{ruby_rubylibdir}/*
-
-# Things originating here
 %{ruby_ridir}/ActionController
 %{ruby_ridir}/ActionView
-
-# Extensions to the base
-%{ruby_ridir}/CGIMethods/* 
-%{ruby_ridir}/ClassInheritableAttributes/*
-%{ruby_ridir}/CGI/*
-%{ruby_ridir}/Class/*
-%{ruby_ridir}/Logger/*
+%{ruby_ridir}/CGIMethods
+%{ruby_ridir}/ClassInheritableAttributes
