@@ -5,7 +5,7 @@ Summary:	Object-Relational mapping library for Ruby
 Summary(pl):	Biblioteka odwzorowañ obiektowo-relacyjnych dla Ruby
 Name:		ruby-ActionPack
 %define tarname actionpack
-Version:	0.7.9
+Version:	0.8.0
 Release:	0.1
 License:	Ruby-alike
 Group:		Development/Languages
@@ -25,7 +25,7 @@ delete (CRUD for short) some sort of model part (often database) before
 choosing either to render a template or redirecting to another action.
 
 %prep
-%setup -q -n %{tarname}-%{version}
+%setup -q -n %{tarname}-0.7.9
 
 %build
 rdoc --ri --op ri lib
