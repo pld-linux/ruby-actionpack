@@ -5,12 +5,12 @@ Summary:	Object-Relational mapping library for Ruby
 Summary(pl):	Biblioteka odwzorowañ obiektowo-relacyjnych dla Ruby
 Name:		ruby-ActionPack
 %define tarname actionpack
-Version:	1.3.1
+Version:	1.5.1
 Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
-Source0:	http://rubyforge.org/download.php/2661/%{tarname}-%{version}.tgz
-# Source0-md5:	6c51de13af733cea68e407f9591ab01c
+Source0:	http://rubyforge.org/frs/download.php/3330/%{tarname}-%{version}.tgz
+# Source0-md5:	56dca7c6188e3bd44074c2215f5aa9dd
 URL:		http://actionpack.rubyonrails.org/
 BuildRequires:	ruby
 Requires:	ruby
@@ -45,9 +45,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/ri/* $RPM_BUILD_ROOT%{ruby_ridir}
-rm $RPM_BUILD_ROOT%{ruby_ridir}/CGI/*
-rm $RPM_BUILD_ROOT%{ruby_ridir}/Class/*
-rm $RPM_BUILD_ROOT%{ruby_ridir}/Logger/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,4 +56,3 @@ rm -rf $RPM_BUILD_ROOT
 %{ruby_ridir}/ActionController
 %{ruby_ridir}/ActionView
 %{ruby_ridir}/CGIMethods
-%{ruby_ridir}/ClassInheritableAttributes
