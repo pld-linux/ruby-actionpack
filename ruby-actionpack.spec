@@ -6,7 +6,7 @@ Summary(pl):	Biblioteka odwzorowañ obiektowo-relacyjnych dla Ruby
 Name:		ruby-ActionPack
 %define tarname actionpack
 Version:	0.8.0
-Release:	0.1
+Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubyforge.org/download.php/1219/%{tarname}-%{version}.tgz
