@@ -14,7 +14,7 @@ Source0:	http://rubyforge.org/download.php/1219/%{tarname}-%{version}.tgz
 URL:		http://actionpack.rubyonrails.org/
 BuildRequires:	ruby
 Requires:	ruby
-BuildArch:	noarch
+#BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
