@@ -18,11 +18,20 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Action Pack splits the response to a web request into a controller part
-(performing the logic) and a view part (rendering a template). This two-step
-approach is known as an action, which will normally create, read, update, or
-delete (CRUD for short) some sort of model part (often database) before
-choosing either to render a template or redirecting to another action.
+Action Pack splits the response to a web request into a controller
+part (performing the logic) and a view part (rendering a template).
+This two-step approach is known as an action, which will normally
+create, read, update, or delete (CRUD for short) some sort of model
+part (often database) before choosing either to render a template or
+redirecting to another action.
+
+%description -l pl
+Action Pack dzieli odpowied¼ na ¿±danie WWW na czê¶æ steruj±c±
+(wykonuj±c± logikê) i czê¶æ widokow± (przetwarzaj±c± szablon). To
+dwukrokowe podej¶cie jest znane jako akcja, która zwykle tworzy,
+czyta, uaktualnia lub usuwa (create, read, update, delete - CRUD)
+jaki¶ rodzaj czê¶ci modelu (zwykle bazy danych) przed wybraniem czy
+przetwarzaæ szablon, czy przekierowaæ do innej akcji.
 
 %prep
 %setup -q -n %{tarname}-%{version}
@@ -33,7 +42,7 @@ rdoc --op rdoc lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir}}
+install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 rm $RPM_BUILD_ROOT%{ruby_ridir}/CGI/*
