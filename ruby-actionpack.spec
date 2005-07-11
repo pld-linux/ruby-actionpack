@@ -5,12 +5,12 @@ Summary:	Object-Relational mapping library for Ruby
 Summary(pl):	Biblioteka odwzorowañ obiektowo-relacyjnych dla Ruby
 Name:		ruby-ActionPack
 %define tarname actionpack
-Version:	1.9.0
+Version:	1.9.1
 Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
-Source0:	http://rubyforge.org/download.php/5114/%{tarname}-%{version}.tgz
-# Source0-md5:	9a855267328f9bc1d014abab71133623
+Source0:	http://rubyforge.org/download.php/5167/%{tarname}-%{version}.tgz
+# Source0-md5:	3d7491e7e43d208a0f3e055eb3435e1e
 URL:		http://actionpack.rubyonrails.org/
 BuildRequires:	ruby
 Requires:	ruby
