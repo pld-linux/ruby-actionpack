@@ -1,6 +1,3 @@
-%define	ruby_rubylibdir	%(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
-%define	ruby_ridir	%(ruby -r rbconfig -e 'include Config; print File.join(CONFIG["datadir"], "ri", CONFIG["ruby_version"], "system")')
-%define	ruby_version	%(ruby -r rbconfig -e 'print Config::CONFIG["ruby_version"]')
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl):	Biblioteka odwzorowañ obiektowo-relacyjnych dla Ruby
 Name:		ruby-ActionPack
@@ -12,6 +9,7 @@ Group:		Development/Languages
 Source0:	http://rubyforge.org/download.php/6572/%{tarname}-%{version}.tgz
 # Source0-md5:	e20151363f754692c68519b13c1a4377
 URL:		http://actionpack.rubyonrails.org/
+BuildRequires:	rpmbuild(macros) >= 1.263
 BuildRequires:	ruby
 Requires:	ruby
 #BuildArch:	noarch
