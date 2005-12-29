@@ -9,9 +9,9 @@ Group:		Development/Languages
 Source0:	http://rubyforge.org/download.php/6572/%{tarname}-%{version}.tgz
 # Source0-md5:	e20151363f754692c68519b13c1a4377
 URL:		http://actionpack.rubyonrails.org/
-BuildRequires:	rpmbuild(macros) >= 1.263
+BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
-Requires:	ruby-modules
+%ruby_mod_ver_requires_eq
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
