@@ -1,5 +1,5 @@
 Summary:	Object-Relational mapping library for Ruby
-Summary(pl):	Biblioteka odwzorowañ obiektowo-relacyjnych dla Ruby
+Summary(pl.UTF-8):   Biblioteka odwzorowaÅ„ obiektowo-relacyjnych dla Ruby
 Name:		ruby-ActionPack
 %define tarname actionpack
 Version:	1.12.5
@@ -23,13 +23,13 @@ create, read, update, or delete (CRUD for short) some sort of model
 part (often database) before choosing either to render a template or
 redirecting to another action.
 
-%description -l pl
-Action Pack dzieli odpowied¼ na ¿±danie WWW na czê¶æ steruj±c±
-(wykonuj±c± logikê) i czê¶æ widokow± (przetwarzaj±c± szablon). To
-dwukrokowe podej¶cie jest znane jako akcja, która zwykle tworzy,
+%description -l pl.UTF-8
+Action Pack dzieli odpowiedÅº na Å¼Ä…danie WWW na czÄ™Å›Ä‡ sterujÄ…cÄ…
+(wykonujÄ…cÄ… logikÄ™) i czÄ™Å›Ä‡ widokowÄ… (przetwarzajÄ…cÄ… szablon). To
+dwukrokowe podejÅ›cie jest znane jako akcja, ktÃ³ra zwykle tworzy,
 czyta, uaktualnia lub usuwa (create, read, update, delete - CRUD)
-jaki¶ rodzaj czê¶ci modelu (zwykle bazy danych) przed wybraniem czy
-przetwarzaæ szablon, czy przekierowaæ do innej akcji.
+jakiÅ› rodzaj czÄ™Å›ci modelu (zwykle bazy danych) przed wybraniem czy
+przetwarzaÄ‡ szablon, czy przekierowaÄ‡ do innej akcji.
 
 %prep
 %setup -q -n %{tarname}-%{version}
