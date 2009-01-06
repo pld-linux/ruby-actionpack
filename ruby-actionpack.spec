@@ -51,6 +51,7 @@ Dokumentacja do biblioteki ActionPack.
 %build
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
+rm -f ri/created.rid
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,8 +59,6 @@ install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir},%{ruby_rdocdir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 cp -a rdoc $RPM_BUILD_ROOT%{ruby_rdocdir}/%{name}-%{version}-%{release}
-
-rm -f $RPM_BUILD_ROOT%{ruby_ridir}/created.rid
 
 %clean
 rm -rf $RPM_BUILD_ROOT
