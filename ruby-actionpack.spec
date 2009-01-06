@@ -9,6 +9,7 @@ Source0:	http://rubyforge.org/frs/download.php/45359/actionpack-%{version}.tgz
 # Source0-md5:	3e63fec3ee33b9455306b8fb4e4a735f
 URL:		http://rubyforge.org/projects/actionpack/
 BuildRequires:	rpmbuild(macros) >= 1.277
+BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
 #BuildArch:	noarch
@@ -52,6 +53,17 @@ Dokumentacja do biblioteki ActionPack.
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
 rm -f ri/created.rid
+# external stuff?
+rm -rf ri/CGI
+rm -rf ri/ERB
+rm -rf ri/FalseClass
+rm -rf ri/HTML
+rm -rf ri/Mime
+rm -rf ri/NilClass
+rm -rf ri/Object
+rm -rf ri/Regexp
+rm -rf ri/Test
+rm -rf ri/TrueClass
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -77,16 +89,6 @@ rm -rf $RPM_BUILD_ROOT
 %files rdoc
 %defattr(644,root,root,755)
 %{ruby_rdocdir}/%{name}-%{version}-%{release}
-%{ruby_ridir}/ri/ActionController
-%{ruby_ridir}/ri/ActionPack
-%{ruby_ridir}/ri/ActionView
-%{ruby_ridir}/ri/CGI
-%{ruby_ridir}/ri/ERB
-%{ruby_ridir}/ri/FalseClass
-%{ruby_ridir}/ri/HTML
-%{ruby_ridir}/ri/Mime
-%{ruby_ridir}/ri/NilClass
-%{ruby_ridir}/ri/Object
-%{ruby_ridir}/ri/Regexp
-%{ruby_ridir}/ri/Test
-%{ruby_ridir}/ri/TrueClass
+%{ruby_ridir}/ActionController
+%{ruby_ridir}/ActionPack
+%{ruby_ridir}/ActionView
