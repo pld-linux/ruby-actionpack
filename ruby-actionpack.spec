@@ -1,17 +1,19 @@
+%define pkgname actionpack
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
-Name:		ruby-ActionPack
+Name:		ruby-%{pkgname}
 Version:	2.0.5
 Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
-Source0:	http://rubyforge.org/frs/download.php/45359/actionpack-%{version}.tgz
+Source0:	http://rubyforge.org/frs/download.php/45359/%{pkgname}-%{version}.tgz
 # Source0-md5:	3e63fec3ee33b9455306b8fb4e4a735f
 URL:		http://rubyforge.org/projects/actionpack/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
+Obsoletes:	ruby-ActionPack
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -70,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir},%{ruby_rdocdir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
-cp -a rdoc $RPM_BUILD_ROOT%{ruby_rdocdir}/%{name}-%{version}-%{release}
+cp -a rdoc $RPM_BUILD_ROOT%{ruby_rdocdir}/%{pkgname}-%{version}-%{release}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -88,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files rdoc
 %defattr(644,root,root,755)
-%{ruby_rdocdir}/%{name}-%{version}-%{release}
+%{ruby_rdocdir}/%{pkgname}-%{version}-%{release}
 %{ruby_ridir}/ActionController
 %{ruby_ridir}/ActionPack
 %{ruby_ridir}/ActionView
