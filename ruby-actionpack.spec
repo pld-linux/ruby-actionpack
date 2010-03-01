@@ -8,11 +8,13 @@ License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
 # Source0-md5:	c32297f6e4af8ac9971dbc116e98a636
+Patch0:		%{name}-nogems.patch
 URL:		http://rubyforge.org/projects/actionpack/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
+Requires:	ruby-rack >= 1.0.1
 Obsoletes:	ruby-ActionPack
 Provides:	ruby-ActionPack
 #BuildArch:	noarch
@@ -51,9 +53,9 @@ Dokumentacja do biblioteki ActionPack.
 
 %prep
 %setup -q -c
-
 %{__tar} xf %{SOURCE0} -O data.tar.gz | %{__tar} xz
 find -newer README  -o -print | xargs touch --reference %{SOURCE0}
+%patch0 -p1
 
 %build
 rdoc --ri --op ri lib

@@ -1,0 +1,75 @@
+diff --git a/lib/action_controller.rb b/lib/action_controller.rb
+index f53ba27..91dfe3d 100644
+--- a/lib/action_controller.rb
++++ b/lib/action_controller.rb
+@@ -21,17 +21,7 @@
+ # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #++
+ 
+-begin
+-  require 'active_support'
+-rescue LoadError
+-  activesupport_path = "#{File.dirname(__FILE__)}/../../activesupport/lib"
+-  if File.directory?(activesupport_path)
+-    $:.unshift activesupport_path
+-    require 'active_support'
+-  end
+-end
+-
+-gem 'rack', '~> 1.0.1'
++require 'active_support'
+ require 'rack'
+ require 'action_controller/cgi_ext'
+ 
+diff --git a/lib/action_view.rb b/lib/action_view.rb
+index 1f1ff9d..f845df1 100644
+--- a/lib/action_view.rb
++++ b/lib/action_view.rb
+@@ -21,15 +21,7 @@
+ # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #++
+ 
+-begin
+-  require 'active_support'
+-rescue LoadError
+-  activesupport_path = "#{File.dirname(__FILE__)}/../../activesupport/lib"
+-  if File.directory?(activesupport_path)
+-    $:.unshift activesupport_path
+-    require 'active_support'
+-  end
+-end
++require 'active_support'
+ 
+ module ActionView
+   def self.load_all!
+diff --git a/test/abstract_unit.rb b/test/abstract_unit.rb
+index 8acc451..8476764 100644
+--- a/test/abstract_unit.rb
++++ b/test/abstract_unit.rb
+@@ -3,12 +3,10 @@ $:.unshift(File.dirname(__FILE__) + '/../../activesupport/lib')
+ $:.unshift(File.dirname(__FILE__) + '/fixtures/helpers')
+ $:.unshift(File.dirname(__FILE__) + '/fixtures/alternate_helpers')
+ 
+-require 'rubygems'
+ require 'yaml'
+ require 'stringio'
+ require 'test/unit'
+ 
+-gem 'mocha', '>= 0.9.7'
+ require 'mocha'
+ 
+ begin
+diff --git a/test/active_record_unit.rb b/test/active_record_unit.rb
+index 9e0c660..a63782b 100644
+--- a/test/active_record_unit.rb
++++ b/test/active_record_unit.rb
+@@ -16,9 +16,6 @@ if defined?(ActiveRecord) && defined?(Fixtures)
+ else
+   $stderr.print 'Attempting to load Active Record... '
+   begin
+-    PATH_TO_AR = "#{File.dirname(__FILE__)}/../../activerecord/lib"
+-    raise LoadError, "#{PATH_TO_AR} doesn't exist" unless File.directory?(PATH_TO_AR)
+-    $LOAD_PATH.unshift PATH_TO_AR
+     require 'active_record'
+     require 'active_record/fixtures'
+     $stderr.puts 'success'
