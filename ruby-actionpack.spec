@@ -51,6 +51,18 @@ Documentation files for ActionPack.
 %description rdoc -l pl.UTF-8
 Dokumentacja do biblioteki ActionPack.
 
+%package ri
+Summary:	ri documentation for %{pkgname}
+Summary(pl.UTF-8):	Dokumentacja w formacie ri dla %{pkgname}
+Group:		Documentation
+Requires:	ruby
+
+%description ri
+ri documentation for %{pkgname}.
+
+%description ri -l pl.UTF-8
+Dokumentacji w formacie ri dla %{pkgname}.
+
 %prep
 %setup -q -c
 %{__tar} xf %{SOURCE0} -O data.tar.gz | %{__tar} xz
@@ -60,18 +72,8 @@ find -newer README  -o -print | xargs touch --reference %{SOURCE0}
 %build
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
-rm -f ri/created.rid
-# external stuff?
-rm -rf ri/CGI
-rm -rf ri/ERB
-rm -rf ri/FalseClass
-rm -rf ri/HTML
-rm -rf ri/Mime
-rm -rf ri/NilClass
-rm -rf ri/Object
-rm -rf ri/Regexp
-rm -rf ri/Test
-rm -rf ri/TrueClass
+rm ri/created.rid
+rm -r ri/{CGI,ERB,FalseClass,HTML,Mime,NilClass,Object,Regexp,Test,TrueClass}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -98,6 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 %files rdoc
 %defattr(644,root,root,755)
 %{ruby_rdocdir}/%{pkgname}-%{version}-%{release}
+
+%files ri
+%defattr(644,root,root,755)
 %{ruby_ridir}/ActionController
 %{ruby_ridir}/ActionPack
 %{ruby_ridir}/ActionView
