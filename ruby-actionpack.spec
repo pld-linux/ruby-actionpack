@@ -3,7 +3,7 @@ Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-%{pkgname}
 Version:	2.3.5
-Release:	2
+Release:	3
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
@@ -91,9 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{ruby_rubylibdir}/action_controller
 %{ruby_rubylibdir}/action_controller.rb
+%{ruby_rubylibdir}/action_pack
 %{ruby_rubylibdir}/action_pack.rb
 %{ruby_rubylibdir}/actionpack.rb
-%{ruby_rubylibdir}/action_pack/version.rb
 %{ruby_rubylibdir}/action_view
 %{ruby_rubylibdir}/action_view.rb
 
