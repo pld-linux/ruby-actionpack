@@ -16,7 +16,7 @@ index f53ba27..91dfe3d 100644
 -  end
 -end
 -
--gem 'rack', '~> 1.0.1'
+-gem 'rack', '~> 1.1.0'
 +require 'active_support'
  require 'rack'
  require 'action_controller/cgi_ext'
@@ -67,7 +67,7 @@ index 9e0c660..a63782b 100644
  else
    $stderr.print 'Attempting to load Active Record... '
    begin
--    PATH_TO_AR = "#{File.dirname(__FILE__)}/../../activerecord/lib"
+-    PATH_TO_AR = File.expand_path('../../../activerecord/lib', __FILE__)
 -    raise LoadError, "#{PATH_TO_AR} doesn't exist" unless File.directory?(PATH_TO_AR)
 -    $LOAD_PATH.unshift PATH_TO_AR
      require 'active_record'

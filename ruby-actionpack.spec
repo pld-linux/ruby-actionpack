@@ -2,19 +2,19 @@
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-%{pkgname}
-Version:	2.3.5
-Release:	3
+Version:	2.3.11
+Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	c32297f6e4af8ac9971dbc116e98a636
+# Source0-md5:	edcab685efc7d021b71b6eb848f3d615
 Patch0:		%{name}-nogems.patch
 URL:		http://rubyforge.org/projects/actionpack/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
-Requires:	ruby-rack >= 1.0.1
+Requires:	ruby-rack >= 1.1.0
 Obsoletes:	ruby-ActionPack
 Provides:	ruby-ActionPack
 #BuildArch:	noarch
@@ -73,7 +73,7 @@ find -newer README  -o -print | xargs touch --reference %{SOURCE0}
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
 rm ri/created.rid
-rm -r ri/{CGI,ERB,FalseClass,HTML,Mime,NilClass,Object,RackLintPatch,Regexp,TrueClass}
+rm -r ri/{CGI,FalseClass,HTML,Mime,NilClass,Object,RackLintPatch,Regexp,TrueClass}
 
 %install
 rm -rf $RPM_BUILD_ROOT
