@@ -104,5 +104,4 @@ rm -rf $RPM_BUILD_ROOT
 %files ri
 %defattr(644,root,root,755)
 %{ruby_ridir}/ActionController
-%{ruby_ridir}/ActionPack
 %{ruby_ridir}/ActionView
