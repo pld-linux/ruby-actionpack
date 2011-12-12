@@ -70,8 +70,8 @@ find -newer README  -o -print | xargs touch --reference %{SOURCE0}
 %patch0 -p1
 
 %build
-LC_ALL=C rdoc --ri --op ri lib
-LC_ALL=C rdoc --op rdoc lib
+LC_ALL=en_US.UTF-8 rdoc --ri --op ri lib
+LC_ALL=en_US.UTF-8 rdoc --op rdoc lib
 rm ri/created.rid
 rm -fr ri/{CGI,FalseClass,HTML,Mime,NilClass,Object,RackLintPatch,Regexp,TrueClass}
 
