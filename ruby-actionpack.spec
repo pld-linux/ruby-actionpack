@@ -3,7 +3,7 @@ Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-%{pkgname}
 Version:	2.3.14
-Release:	1
+Release:	2
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
@@ -73,7 +73,7 @@ find -newer README  -o -print | xargs touch --reference %{SOURCE0}
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
 rm ri/created.rid
-rm -r ri/{CGI,FalseClass,HTML,Mime,NilClass,Object,RackLintPatch,Regexp,TrueClass}
+rm -fr ri/{CGI,FalseClass,HTML,Mime,NilClass,Object,RackLintPatch,Regexp,TrueClass}
 
 %install
 rm -rf $RPM_BUILD_ROOT
