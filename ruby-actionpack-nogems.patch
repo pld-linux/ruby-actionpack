@@ -16,7 +16,7 @@ index f53ba27..91dfe3d 100644
 -  end
 -end
 -
--gem 'rack', '~> 1.1.0'
+-gem 'rack', '~> 1.1.3'
 +require 'active_support'
  require 'rack'
  require 'action_controller/cgi_ext'

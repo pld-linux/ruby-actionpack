@@ -2,12 +2,12 @@
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-%{pkgname}
-Version:	2.3.14
-Release:	3
+Version:	2.3.15
+Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	37078d46204342eccf6827f266122b64
+# Source0-md5:	94964fbe84612641486c9773647d6be7
 Patch0:		%{name}-nogems.patch
 URL:		http://rubyforge.org/projects/actionpack/
 BuildRequires:	rpmbuild(macros) >= 1.277
