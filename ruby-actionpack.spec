@@ -3,26 +3,21 @@ Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-%{pkgname}
 Version:	3.2.19
-Release:	3
+Release:	4
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
 # Source0-md5:	e44a409d81fd2b487b12850bcd10cf0d
 URL:		http://rubyforge.org/projects/actionpack/
-BuildRequires:	rpmbuild(macros) >= 1.277
-BuildRequires:	ruby >= 1:1.8.6
-BuildRequires:	ruby-modules
-%{?ruby_mod_ver_requires_eq}
+BuildRequires:	rpm-rubyprov
+BuildRequires:	rpmbuild(macros) >= 1.665
 Requires:	ruby-rack >= 1.1.0
 Requires:	ruby-sprockets >= 2.2.1
-Conflicts:	ruby-sprockets >= 2.3
-Obsoletes:	ruby-ActionPack
 Provides:	ruby-ActionPack
-#BuildArch:	noarch
+Obsoletes:	ruby-ActionPack
+Conflicts:	ruby-sprockets >= 2.3
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-# nothing to be placed there. we're not noarch only because of ruby packaging
-%define		_enable_debug_packages	0
 
 %description
 Action Pack splits the response to a web request into a controller
@@ -74,13 +69,14 @@ Dokumentacji w formacie ri dla %{pkgname}.
 LC_ALL=en_US.UTF-8 rdoc --ri --op ri lib
 LC_ALL=en_US.UTF-8 rdoc --op rdoc lib
 rm ri/created.rid
+rm ri/cache.ri
 rm -fr ri/{system,Rack,CGI,FalseClass,HTML,Mime,NilClass,Object,RackLintPatch,Regexp,TrueClass}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir},%{ruby_rdocdir}}
+install -d $RPM_BUILD_ROOT{%{ruby_vendorlibdir},%{ruby_ridir},%{ruby_rdocdir}}
 
-cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
+cp -a lib/* $RPM_BUILD_ROOT%{ruby_vendorlibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 cp -a rdoc $RPM_BUILD_ROOT%{ruby_rdocdir}/%{pkgname}-%{version}-%{release}
 
@@ -94,17 +90,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.rdoc
-%{ruby_rubylibdir}/abstract_controller
-%{ruby_rubylibdir}/abstract_controller.rb
-%{ruby_rubylibdir}/action_controller
-%{ruby_rubylibdir}/action_controller.rb
-%{ruby_rubylibdir}/action_dispatch
-%{ruby_rubylibdir}/action_dispatch.rb
-%{ruby_rubylibdir}/action_pack
-%{ruby_rubylibdir}/action_pack.rb
-%{ruby_rubylibdir}/action_view
-%{ruby_rubylibdir}/action_view.rb
-%{ruby_rubylibdir}/sprockets
+%{ruby_vendorlibdir}/abstract_controller
+%{ruby_vendorlibdir}/abstract_controller.rb
+%{ruby_vendorlibdir}/action_controller
+%{ruby_vendorlibdir}/action_controller.rb
+%{ruby_vendorlibdir}/action_dispatch
+%{ruby_vendorlibdir}/action_dispatch.rb
+%{ruby_vendorlibdir}/action_pack
+%{ruby_vendorlibdir}/action_pack.rb
+%{ruby_vendorlibdir}/action_view
+%{ruby_vendorlibdir}/action_view.rb
+%{ruby_vendorlibdir}/sprockets
 %{ruby_specdir}/%{pkgname}-%{version}.gemspec
 
 %files rdoc
