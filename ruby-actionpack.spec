@@ -2,20 +2,27 @@
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-%{pkgname}
-Version:	3.2.19
-Release:	7
-License:	Ruby-alike
+Version:	8.1.2
+Release:	1
+License:	MIT
 Group:		Development/Languages
-Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	e44a409d81fd2b487b12850bcd10cf0d
-URL:		http://rubyforge.org/projects/actionpack/
+Source0:	https://rubygems.org/downloads/%{pkgname}-%{version}.gem
+# Source0-md5:	b3ce9e5c668f7d810be3bf08a2167c57
+URL:		https://rubyonrails.org
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.665
-Requires:	ruby-rack >= 1.1.0
-Requires:	ruby-sprockets >= 2.2.1
+Requires:	ruby-actionview = %{version}
+Requires:	ruby-activesupport = %{version}
+Requires:	ruby-nokogiri >= 1.8.5
+Requires:	ruby-rack >= 2.2.4
+Requires:	ruby-rack-session >= 1.0.1
+Requires:	ruby-rack-test >= 0.6.3
+Requires:	ruby-rails-dom-testing >= 2.2
+Requires:	ruby-rails-html-sanitizer >= 1.6.0
+Requires:	ruby-useragent >= 0.16.0
+Requires:	ruby >= 3.2.0
 Provides:	ruby-ActionPack
 Obsoletes:	ruby-ActionPack
-Conflicts:	ruby-sprockets >= 2.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -89,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.rdoc
+%doc CHANGELOG.md MIT-LICENSE README.rdoc
 %{ruby_vendorlibdir}/abstract_controller
 %{ruby_vendorlibdir}/abstract_controller.rb
 %{ruby_vendorlibdir}/action_controller
@@ -98,9 +105,6 @@ rm -rf $RPM_BUILD_ROOT
 %{ruby_vendorlibdir}/action_dispatch.rb
 %{ruby_vendorlibdir}/action_pack
 %{ruby_vendorlibdir}/action_pack.rb
-%{ruby_vendorlibdir}/action_view
-%{ruby_vendorlibdir}/action_view.rb
-%{ruby_vendorlibdir}/sprockets
 %{ruby_specdir}/%{pkgname}-%{version}.gemspec
 
 %files rdoc
@@ -110,7 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 %files ri
 %defattr(644,root,root,755)
 %{ruby_ridir}/AbstractController
+%{ruby_ridir}/ActionPack
 %{ruby_ridir}/ActionController
 %{ruby_ridir}/ActionDispatch
-%{ruby_ridir}/ActionView
-%{ruby_ridir}/Sprockets
+%{ruby_ridir}/lib/action_dispatch/journey/visualizer
